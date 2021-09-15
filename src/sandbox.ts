@@ -1,26 +1,22 @@
-//Dynamic any types
-let age: any = 25
-age = true;
-console.log(age);//return true
+//Functions basics
+let greet: Function;
 
-age = 'hello' 
-console.log(age)//return hello
-
-age = {name: 'sam'};
-console.log(age)// return {name 'sam'}
+greet = () => {
+    console.log("hello")
+}
+greet() //return hello
 
 
-let mixed: any[] = []
-mixed.push(5);
-mixed.push('mario');
-mixed.push(false);
-console.log(mixed)//return [5, mario, false]
+const add = (a: number, b: string, c: number | string) => {
+    console.log(a, b, c);
+}
+add(2, "sam", "veinte") //return 2, 'sam', "veinte"
 
 
-let ninja: {name: any, age: any}
-
-ninja = {name: 'sam', age: 20};
-console.log(ninja); //return {name: 'sam', age: 20}
-
-ninja = {name: 20, age:'veinte'};
-console.log(ninja); //return {name: 20, age: 'veinte'}
+//the renturned value will take the type of parameters variable
+const minus = (a: number,  b: number ) => {
+    return a + b
+}
+let result = minus(2, 2)
+console.log(result)//return 4
+//result = 'something' //result type is number therefore can not be string

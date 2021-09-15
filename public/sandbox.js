@@ -1,18 +1,18 @@
-//Dynamic any types
-var age = 25;
-age = true;
-console.log(age); //return true
-age = 'hello';
-console.log(age); //return hello
-age = { name: 'sam' };
-console.log(age); // return {name 'sam'}
-var mixed = [];
-mixed.push(5);
-mixed.push('mario');
-mixed.push(false);
-console.log(mixed); //return [5, mario, false]
-var ninja;
-ninja = { name: 'sam', age: 20 };
-console.log(ninja); //return {name: 'sam', age: 20}
-ninja = { name: 20, age: 'veinte' };
-console.log(ninja); //return {name: 20, age: 'veinte'}
+"use strict";
+//Functions basics
+var greet;
+greet = function () {
+    console.log("hello");
+};
+greet(); //return hello
+var add = function (a, b, c) {
+    console.log(a, b, c);
+};
+add(2, "sam", "veinte"); //return 2, 'sam', "veinte"
+//the renturned value will take the type of parameters variable
+var minus = function (a, b) {
+    return a + b;
+};
+var result = minus(2, 2);
+console.log(result); //return 4
+//result = 'something' //result type is number therefore can not be string
