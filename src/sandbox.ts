@@ -1,22 +1,17 @@
-//Functions basics
-let greet: Function;
+//Type Aliases, different type of data can be stored in one alias
+type StrOrNum = string | number;
+type objWithName = { name: string, uid: StrOrNum}
 
-greet = () => {
-    console.log("hello")
+const logDetails = (uid:StrOrNum, item:string) => {
+    console.log(`${item} has a uid of ${uid}`)
 }
-greet() //return hello
 
 
-const add = (a: number, b: string, c: number | string) => {
-    console.log(a, b, c);
+// same alias objWithName can be use in different functions
+const greet = (user: objWithName) => {
+    console.log(`${user.name} says hello`)
 }
-add(2, "sam", "veinte") //return 2, 'sam', "veinte"
 
-
-//the renturned value will take the type of parameters variable
-const minus = (a: number,  b: number ) => {
-    return a + b
+const greetAgain = (user: objWithName) => {
+    console.log(`${user.name} says hello again`)
 }
-let result = minus(2, 2)
-console.log(result)//return 4
-//result = 'something' //result type is number therefore can not be string

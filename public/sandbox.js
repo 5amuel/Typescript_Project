@@ -1,18 +1,11 @@
 "use strict";
-//Functions basics
-var greet;
-greet = function () {
-    console.log("hello");
+var logDetails = function (uid, item) {
+    console.log(item + " has a uid of " + uid);
 };
-greet(); //return hello
-var add = function (a, b, c) {
-    console.log(a, b, c);
+// same alias objWithName can be use in different functions
+var greet = function (user) {
+    console.log(user.name + " says hello");
 };
-add(2, "sam", "veinte"); //return 2, 'sam', "veinte"
-//the renturned value will take the type of parameters variable
-var minus = function (a, b) {
-    return a + b;
+var greetAgain = function (user) {
+    console.log(user.name + " says hello again");
 };
-var result = minus(2, 2);
-console.log(result); //return 4
-//result = 'something' //result type is number therefore can not be string
