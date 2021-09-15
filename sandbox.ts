@@ -12,3 +12,16 @@ mixed.push(10)
 mixed.push('mario')
 mixed[1] = 1
 console.log(mixed)
+
+//Objects
+let ninja = {
+    name: 'mario',
+    belt: 'black',
+    age: 30
+}
+
+ninja.age = 40;
+ninja.name = 'ryu';
+//this is invalid because we try to change to a diferent type o data
+// ninja.age = '30'
+
