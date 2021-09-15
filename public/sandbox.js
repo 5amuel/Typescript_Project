@@ -1,23 +1,32 @@
 "use strict";
-var user = {
-    name: "sam",
-    uid: "123",
+//function signatures
+//function signature example 1
+var greet;
+//la si guiente funcion si cumple con la firma declarada para greet
+greet = function (name, greeting) {
+    console.log(name + " says " + greeting);
 };
-var products = {
-    item: 'beer',
-    uid: 123,
+//la siguiente funcion no cumple con la frima declarada para greet a que
+//debe contener dos strings como parametros
+// greet = (name: string, greeting: number) => {
+//     console.log(`${name} says ${greeting}`)
+// }
+greet("sam", "hoola");
+//Function signature example 2 
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === "add") {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-var logDetails = function (uid, item) {
-    console.log(item + " has a uid of " + uid);
+console.log(calc(2, 3, "add")); //return 5
+console.log(calc(2, 3, "something else")); //return -1
+// Function signature example 3
+var logDetails;
+logDetails = function (ninja) {
+    console.log(ninja.name + " is " + ninja.age + " years old");
 };
-//since type of item parameter is string, value can't be number
-logDetails(products.uid, products.item);
-console.log(typeof (products.uid));
-// same alias objWithName can be use in different functions
-var greet = function (user) {
-    console.log(user.name + " says hello");
-};
-greet(user);
-var greetAgain = function (user) {
-    console.log(user.name + " says hello again");
-};
+logDetails({ name: "sam", age: 24 });
